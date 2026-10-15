@@ -1,0 +1,209 @@
+.final-surprise {
+  position: relative;
+  max-width: 900px;
+  margin: 70px auto 40px;
+  padding: 25px 0;
+}
+
+.final-surprise-card {
+  position: relative;
+  overflow: hidden;
+  padding: 55px 35px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 164, 207, 0.14),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(176, 125, 255, 0.14),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 190, 222, 0.25);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.final-sparkles {
+  margin-bottom: 18px;
+  font-size: 27px;
+  letter-spacing: 8px;
+}
+
+.final-eyebrow {
+  margin-bottom: 16px;
+  color: #ffb7d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.final-surprise-card > h2 {
+  margin: 0 0 20px;
+  color: #fff0f7;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(29px, 5vw, 44px);
+  line-height: 1.35;
+}
+
+.final-surprise-card > h2 span {
+  display: block;
+  color: #ffb7d8;
+}
+
+.final-intro {
+  max-width: 530px;
+  margin: 0 auto 35px;
+  color: #d9c8e5;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.final-envelope {
+  margin: 10px 0 15px;
+  font-size: 75px;
+  animation: envelope-float 3s ease-in-out infinite;
+}
+
+.final-locked > p {
+  margin-bottom: 25px;
+  color: #e6d6ed;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.final-button {
+  padding: 15px 28px;
+  color: #48245f;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffd0e5, #e3c7ff);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 8px 25px rgba(255, 174, 211, 0.15);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.final-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 174, 211, 0.25);
+}
+
+.final-letter {
+  max-width: 590px;
+  margin: 35px auto 10px;
+  padding: 35px 30px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 198, 226, 0.2);
+  border-radius: 24px;
+  animation: letter-appear 0.7s ease both;
+}
+
+.letter-decoration {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 42px;
+}
+
+.final-letter h3 {
+  margin: 0 0 25px;
+  color: #ffd2e5;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.final-letter > p {
+  margin: 0 0 20px;
+  color: #e6d6ed;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.final-letter .final-love {
+  color: #ffb7d8;
+  font-weight: 600;
+}
+
+.final-signature {
+  margin-top: 30px;
+  padding-top: 22px;
+  color: #d9c8e5;
+  font-size: 13px;
+  line-height: 2;
+  text-align: center;
+  border-top: 1px solid rgba(255, 198, 226, 0.2);
+}
+
+.final-signature span {
+  display: block;
+  color: #ffb7d8;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.final-hearts {
+  margin-top: 22px;
+  color: #ffb7d8;
+  font-size: 25px;
+  letter-spacing: 12px;
+  text-align: center;
+}
+
+.final-footer {
+  margin: 35px 0 0;
+  color: #cdb8dc;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@keyframes envelope-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes letter-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .final-surprise {
+    margin-top: 45px;
+    padding: 15px 0;
+  }
+
+  .final-surprise-card {
+    padding: 38px 20px;
+    border-radius: 24px;
+  }
+
+  .final-letter {
+    padding: 27px 20px;
+  }
+
+  .final-button {
+    max-width: 100%;
+    padding: 14px 20px;
+  }
+}

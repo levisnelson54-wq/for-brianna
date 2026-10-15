@@ -1,0 +1,335 @@
+.birthday-page {
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+min-height: 100vh;
+padding: 40px 20px 70px;
+overflow: hidden;
+color: #fff4fb;
+background:
+radial-gradient(ellipse at 15% 15%, #642c71 0%, transparent 40%),
+radial-gradient(ellipse at 85% 85%, #492451 0%, transparent 40%),
+linear-gradient(135deg, #170e2a, #291431, #160e27);
+}
+
+.stars {
+position: absolute;
+inset: 0;
+overflow: hidden;
+pointer-events: none;
+}
+
+.star {
+position: absolute;
+width: 3px;
+height: 3px;
+border-radius: 50%;
+background: #ffe5f5;
+box-shadow: 0 0 10px rgba(255, 205, 237, 0.9);
+animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.floating-heart {
+position: absolute;
+z-index: 0;
+color: rgba(255, 176, 220, 0.23);
+pointer-events: none;
+animation: floatHeart 7s ease-in-out infinite;
+}
+
+.heart-one {
+top: 12%;
+left: 8%;
+font-size: 65px;
+}
+
+.heart-two {
+top: 45%;
+right: 7%;
+font-size: 52px;
+animation-delay: 1.5s;
+}
+
+.heart-three {
+bottom: 15%;
+left: 10%;
+font-size: 48px;
+animation-delay: 3s;
+}
+
+.welcome-card {
+position: relative;
+z-index: 1;
+width: min(760px, 100%);
+margin: 55px auto 25px;
+padding: clamp(28px, 6vw, 60px) clamp(20px, 5vw, 48px);
+border: 1px solid rgba(255, 204, 235, 0.22);
+border-radius: 30px;
+background: rgba(38, 22, 53, 0.77);
+box-shadow: 0 25px 70px rgba(5, 2, 14, 0.3);
+backdrop-filter: blur(14px);
+text-align: center;
+animation: appear 1s ease both;
+}
+
+.eyebrow {
+margin: 0 0 20px;
+color: #f5b2d8;
+font-size: 0.72rem;
+font-weight: 800;
+letter-spacing: 0.2em;
+line-height: 1.7;
+}
+
+.welcome-card h1 {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin: 0;
+color: #fff6fc;
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(2.4rem, 7vw, 4.6rem);
+font-weight: 500;
+line-height: 1.16;
+}
+
+.name {
+color: #ffb5de;
+text-shadow: 0 0 30px rgba(255, 142, 206, 0.17);
+}
+
+.divider {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 17px;
+margin: 26px 0;
+color: #ffb8df;
+font-size: 1.2rem;
+}
+
+.intro {
+margin: 0 auto;
+color: #e9d8ed;
+font-size: clamp(0.96rem, 2.5vw, 1.08rem);
+line-height: 2;
+}
+
+.playful-note {
+margin: 26px 0 0;
+color: #f6c0e0;
+font-size: 0.9rem;
+font-style: italic;
+line-height: 1.8;
+}
+
+/* The playful Swahili message */
+.brianna-quote {
+max-width: 100%;
+margin: 12px auto 25px;
+color: #ffc4e6;
+font-size: clamp(1rem, 3vw, 1.25rem);
+font-weight: 800;
+line-height: 1.8;
+text-align: center;
+overflow-wrap: anywhere;
+animation: quoteFloat 2.5s ease-in-out infinite;
+text-shadow: 0 0 18px rgba(255, 150, 215, 0.3);
+}
+
+.button-playground {
+position: relative;
+width: 100%;
+height: 115px;
+margin: 10px auto 0;
+}
+
+.start-button {
+position: absolute;
+transform: translate(-50%, -50%);
+min-height: 48px;
+padding: 14px 24px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 999px;
+color: #38162f;
+background: linear-gradient(135deg, #ffc6e6, #f39bcf);
+box-shadow: 0 9px 28px rgba(3, 1, 10, 0.28);
+font-size: 0.9rem;
+font-weight: 800;
+white-space: nowrap;
+transition: top 180ms ease, left 180ms ease, transform 180ms ease;
+}
+
+.start-button:hover {
+transform: translate(-50%, -50%) scale(1.04);
+}
+
+.signature {
+margin: 25px 0 0;
+color: #d9bfdc;
+font-size: 0.86rem;
+line-height: 1.8;
+}
+
+.celebration {
+border-color: rgba(255, 181, 222, 0.42);
+background:
+radial-gradient(circle at top, rgba(183, 83, 154, 0.2), transparent 55%),
+rgba(38, 22, 53, 0.86);
+}
+
+.celebration-icon {
+margin-bottom: 20px;
+font-size: 4rem;
+animation: cakeBounce 2s ease-in-out infinite;
+}
+
+.birthday-balloons {
+margin: 24px 0;
+font-size: clamp(2rem, 6vw, 3rem);
+letter-spacing: 0.15em;
+}
+
+.celebrate-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 48px;
+margin-top: 20px;
+padding: 13px 23px;
+border: 1px solid rgba(255, 255, 255, 0.22);
+border-radius: 999px;
+color: #35162f;
+background: linear-gradient(135deg, #ffc4e6, #f39bcf);
+box-shadow: 0 9px 25px rgba(6, 2, 13, 0.2);
+font-size: 0.9rem;
+font-weight: 800;
+transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.celebrate-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 13px 30px rgba(6, 2, 13, 0.3);
+}
+
+.page-footer {
+position: relative;
+z-index: 1;
+width: 100%;
+margin: 35px auto 0;
+color: #d7bddc;
+font-size: 0.85rem;
+line-height: 1.8;
+text-align: center;
+}
+
+@keyframes appear {
+from {
+opacity: 0;
+transform: translateY(18px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes twinkle {
+from {
+opacity: 0.2;
+transform: scale(0.7);
+}
+
+to {
+opacity: 1;
+transform: scale(1.2);
+}
+}
+
+@keyframes floatHeart {
+0%, 100% {
+transform: translateY(0) rotate(-8deg);
+}
+
+50% {
+transform: translateY(-18px) rotate(8deg);
+}
+}
+
+@keyframes quoteFloat {
+0%, 100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-4px);
+}
+}
+
+@keyframes cakeBounce {
+0%, 100% {
+transform: translateY(0) rotate(-3deg);
+}
+
+50% {
+transform: translateY(-8px) rotate(3deg);
+}
+}
+
+@media (max-width: 600px) {
+.birthday-page {
+padding: 20px 14px 45px;
+}
+
+.welcome-card {
+margin-top: 35px;
+padding: 35px 20px;
+border-radius: 24px;
+}
+
+.intro br {
+display: none;
+}
+
+.button-playground {
+height: 125px;
+}
+
+.start-button {
+max-width: 95%;
+padding: 13px 17px;
+font-size: 0.82rem;
+}
+
+.heart-one {
+left: 2%;
+font-size: 42px;
+}
+
+.heart-two {
+right: 2%;
+font-size: 38px;
+}
+
+.heart-three {
+left: 3%;
+font-size: 35px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.star,
+.floating-heart,
+.brianna-quote,
+.celebration-icon {
+animation: none;
+}
+
+.start-button,
+.celebrate-button {
+transition: none;
+}
+}

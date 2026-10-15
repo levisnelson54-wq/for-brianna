@@ -1,0 +1,493 @@
+.wishes-section {
+position: relative;
+z-index: 1;
+width: min(1120px, 100%);
+margin: 70px auto 0;
+padding: 28px 0 50px;
+color: #fff3fa;
+}
+
+.wishes-heading,
+.subsection-heading {
+max-width: 790px;
+margin: 0 auto 36px;
+text-align: center;
+}
+
+.wishes-eyebrow {
+margin: 0 0 14px;
+color: #f2a9d4;
+font-size: 0.72rem;
+font-weight: 800;
+letter-spacing: 0.2em;
+line-height: 1.7;
+}
+
+.wishes-heading h2,
+.subsection-heading h3,
+.final-letter-card h3 {
+margin: 0;
+color: #fff6fc;
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(2rem, 5vw, 3.25rem);
+font-weight: 500;
+line-height: 1.25;
+}
+
+.wishes-heading h2 span,
+.subsection-heading h3 span,
+.final-letter-card h3 span {
+color: #f4a4d2;
+}
+
+.wishes-intro,
+.subsection-heading > p:last-child {
+max-width: 680px;
+margin: 18px auto 0;
+color: #ddc8df;
+font-size: 1rem;
+line-height: 1.9;
+}
+
+.wish-grid,
+.surprise-grid,
+.open-when-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 22px;
+margin-top: 28px;
+}
+
+.wish-card,
+.surprise-card,
+.open-when-card {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+min-width: 0;
+min-height: 245px;
+padding: 27px;
+border: 1px solid rgba(245, 177, 220, 0.2);
+border-radius: 22px;
+color: #fff3fa;
+background: linear-gradient(
+145deg,
+rgba(86, 45, 91, 0.77),
+rgba(35, 22, 53, 0.9)
+);
+box-shadow: 0 14px 35px rgba(8, 3, 17, 0.15);
+text-align: left;
+transition:
+transform 220ms ease,
+border-color 220ms ease,
+box-shadow 220ms ease,
+background 220ms ease;
+overflow-wrap: anywhere;
+}
+
+.wish-card:hover,
+.surprise-card:hover,
+.open-when-card:hover {
+transform: translateY(-5px);
+border-color: rgba(255, 186, 225, 0.7);
+box-shadow: 0 18px 40px rgba(7, 2, 15, 0.28);
+}
+
+.wish-card:focus-visible,
+.surprise-card:focus-visible,
+.open-when-card:focus-visible,
+.final-letter-button:focus-visible,
+.celebrate-button:focus-visible {
+outline: 3px solid #ffb9e4;
+outline-offset: 4px;
+}
+
+.wish-card.wish-open,
+.surprise-card.surprise-open,
+.open-when-card.open-when-revealed {
+border-color: rgba(255, 185, 228, 0.58);
+background: linear-gradient(
+145deg,
+rgba(107, 49, 105, 0.88),
+rgba(40, 23, 57, 0.97)
+);
+}
+
+.wish-icon,
+.surprise-icon,
+.open-when-icon {
+display: block;
+margin-bottom: 18px;
+font-size: 2rem;
+}
+
+.wish-category {
+margin-bottom: 9px;
+color: #f2a9d4;
+font-size: 0.67rem;
+font-weight: 800;
+letter-spacing: 0.13em;
+line-height: 1.6;
+}
+
+.wish-title,
+.surprise-title,
+.open-when-title {
+display: block;
+margin-bottom: 13px;
+color: #fff5fc;
+font-family: Georgia, "Times New Roman", serif;
+font-size: 1.55rem;
+font-weight: 600;
+line-height: 1.35;
+}
+
+.wish-preview,
+.surprise-message,
+.open-when-message {
+display: block;
+width: 100%;
+color: #e9d9eb;
+font-size: 0.96rem;
+line-height: 1.9;
+white-space: normal;
+}
+
+.wish-open .wish-preview,
+.surprise-open .surprise-message,
+.open-when-revealed .open-when-message {
+color: #fff1fa;
+}
+
+.wish-action,
+.surprise-action,
+.open-when-action {
+display: block;
+margin-top: auto;
+padding-top: 23px;
+color: #ffb9df;
+font-size: 0.8rem;
+font-weight: 800;
+letter-spacing: 0.025em;
+}
+
+.surprises-section,
+.open-when-section {
+margin-top: 100px;
+}
+
+.subsection-heading {
+margin-bottom: 34px;
+}
+
+.subsection-heading h3 {
+font-size: clamp(1.8rem, 4vw, 2.65rem);
+}
+
+.surprise-card {
+min-height: 225px;
+background: linear-gradient(
+145deg,
+rgba(103, 44, 86, 0.64),
+rgba(35, 22, 53, 0.93)
+);
+}
+
+.open-when-card {
+min-height: 220px;
+background: linear-gradient(
+145deg,
+rgba(58, 53, 105, 0.7),
+rgba(35, 22, 53, 0.93)
+);
+}
+
+.birthday-celebration {
+position: relative;
+margin: 90px 0 35px;
+padding: clamp(30px, 6vw, 58px) 25px;
+border: 1px solid rgba(250, 184, 223, 0.27);
+border-radius: 30px;
+background:
+radial-gradient(
+circle at top right,
+rgba(218, 109, 183, 0.2),
+transparent 45%
+),
+linear-gradient(
+135deg,
+rgba(83, 42, 89, 0.88),
+rgba(36, 22, 55, 0.94)
+);
+text-align: center;
+box-shadow: 0 22px 55px rgba(8, 3, 17, 0.18);
+}
+
+.celebration-sparkle {
+display: block;
+margin-bottom: 17px;
+color: #ffd4ed;
+font-size: 2rem;
+}
+
+.celebration-small {
+color: #f2a9d4;
+font-size: 0.72rem;
+font-weight: 800;
+letter-spacing: 0.2em;
+}
+
+.birthday-celebration h3 {
+margin: 15px 0;
+color: #fff4fb;
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+font-weight: 500;
+}
+
+.birthday-celebration > p:not(.celebration-small) {
+max-width: 570px;
+margin: 0 auto;
+color: #e5d2e7;
+line-height: 1.9;
+}
+
+.celebrate-button,
+.final-letter-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 48px;
+margin-top: 25px;
+padding: 13px 24px;
+border: 1px solid rgba(255, 255, 255, 0.22);
+border-radius: 999px;
+color: #34172f;
+background: linear-gradient(135deg, #ffc4e6, #f39bcf);
+box-shadow: 0 9px 25px rgba(6, 2, 13, 0.2);
+font-size: 0.9rem;
+font-weight: 800;
+transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.celebrate-button:hover,
+.final-letter-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 13px 30px rgba(6, 2, 13, 0.3);
+}
+
+.final-letter-section {
+margin-top: 80px;
+}
+
+.final-letter-card {
+max-width: 850px;
+margin: 0 auto;
+padding: clamp(27px, 6vw, 55px);
+border: 1px solid rgba(255, 183, 224, 0.3);
+border-radius: 28px;
+background:
+radial-gradient(
+circle at 10% 0%,
+rgba(209, 109, 180, 0.15),
+transparent 40%
+),
+linear-gradient(
+150deg,
+rgba(72, 39, 83, 0.94),
+rgba(29, 19, 46, 0.98)
+);
+box-shadow: 0 20px 55px rgba(6, 2, 13, 0.2);
+text-align: center;
+}
+
+.final-letter-icon {
+display: block;
+margin-bottom: 18px;
+font-size: 2.6rem;
+}
+
+.final-letter-card h3 {
+font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.final-letter-intro {
+max-width: 570px;
+margin: 18px auto 0;
+color: #dfcde3;
+line-height: 1.9;
+}
+
+.final-letter-message {
+margin-top: 30px;
+padding-top: 28px;
+border-top: 1px solid rgba(255, 186, 225, 0.24);
+text-align: left;
+animation: letterReveal 500ms ease both;
+}
+
+.final-letter-message p {
+margin: 0 0 19px;
+color: #f1e4f0;
+font-size: 1rem;
+line-height: 2;
+}
+
+.final-letter-message .final-letter-signoff {
+margin-top: 30px;
+color: #ffc5e6;
+font-family: Georgia, "Times New Roman", serif;
+font-size: 1.08rem;
+line-height: 2;
+text-align: center;
+}
+
+.final-letter-signoff strong {
+display: inline-block;
+margin-top: 8px;
+font-size: 1.5rem;
+}
+
+.celebration-overlay {
+position: fixed;
+z-index: 999;
+inset: 0;
+display: flex;
+flex-wrap: wrap;
+align-content: center;
+align-items: center;
+justify-content: center;
+gap: 15px;
+padding: 25px;
+color: #fff5fc;
+background: rgba(22, 11, 35, 0.94);
+text-align: center;
+animation: celebrationFade 2.4s ease both;
+}
+
+.celebration-overlay span {
+font-size: clamp(2.5rem, 8vw, 5rem);
+animation: celebrationBounce 650ms ease-in-out infinite alternate;
+}
+
+.celebration-overlay span:nth-child(even) {
+animation-delay: 150ms;
+}
+
+.celebration-overlay p {
+flex-basis: 100%;
+color: #ffc5e6;
+font-family: Georgia, "Times New Roman", serif;
+font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+@keyframes letterReveal {
+from {
+opacity: 0;
+transform: translateY(12px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes celebrationFade {
+0%,
+82% {
+opacity: 1;
+}
+
+100% {
+opacity: 0;
+visibility: hidden;
+}
+}
+
+@keyframes celebrationBounce {
+from {
+transform: translateY(0) rotate(-5deg);
+}
+
+to {
+transform: translateY(-14px) rotate(5deg);
+}
+}
+
+@media (max-width: 680px) {
+.wishes-section {
+margin-top: 45px;
+padding: 20px 0 35px;
+}
+
+.wishes-heading {
+margin-bottom: 28px;
+}
+
+.wish-grid,
+.surprise-grid,
+.open-when-grid {
+grid-template-columns: minmax(0, 1fr);
+gap: 16px;
+}
+
+.wish-card,
+.surprise-card,
+.open-when-card {
+min-height: 0;
+padding: 23px;
+border-radius: 20px;
+}
+
+.wish-title,
+.surprise-title,
+.open-when-title {
+font-size: 1.4rem;
+}
+
+.surprises-section,
+.open-when-section {
+margin-top: 72px;
+}
+
+.birthday-celebration {
+margin-top: 65px;
+padding: 34px 21px;
+}
+
+.final-letter-section {
+margin-top: 60px;
+}
+
+.final-letter-card {
+padding: 28px 22px;
+border-radius: 23px;
+}
+
+.final-letter-message p {
+font-size: 0.95rem;
+line-height: 1.9;
+}
+
+.celebrate-button,
+.final-letter-button {
+max-width: 100%;
+white-space: normal;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.wish-card,
+.surprise-card,
+.open-when-card,
+.celebrate-button,
+.final-letter-button {
+transition: none;
+}
+
+.final-letter-message,
+.celebration-overlay span {
+animation: none;
+}
+}
