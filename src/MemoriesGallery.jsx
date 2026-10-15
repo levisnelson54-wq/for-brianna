@@ -12,16 +12,23 @@ const memories = [
   },
   {
     id: 2,
+    title: "Birthday Week Mode 🎉",
+    caption: "Because the whole week is yours to celebrate.",
+    image: "/assets/images/memory-2.jpg",
+    fallback: "🎂",
+  },
+  {
+    id: 3,
     title: "The Funny Side 😂",
     caption: "Because making you smile is always a good idea.",
     image: "/assets/images/funny-picture.jpg",
     fallback: "🤣",
   },
   {
-    id: 3,
-    title: "A Beautiful Soul ✨",
-    caption: "Your heart makes you special in your own way.",
-    image: null,
+    id: 4,
+    title: "Pure Chaos, Pure You 🤪",
+    caption: "Never change that wonderfully unpredictable energy.",
+    image: "/assets/images/memory-4.jpg",
     fallback: "🌷",
   },
 ];
@@ -31,13 +38,13 @@ const videos = [
     id: 1,
     title: "A Special Little Moment 💗",
     caption: "A little memory to make your birthday even more special.",
-    src: "/assets/images/WhatsAppVideo%202026-10-14%20at%2023.56.11.mp4",
+    src: "/assets/videos/video-1.mp4",
   },
   {
     id: 2,
     title: "Another Memory 😂",
     caption: "Because the best moments deserve to be watched again.",
-    src: "/assets/images/WhatsAppVideo%202026-10-14%20at%2023.56.16.mp4",
+    src: "/assets/videos/video-2.mp4",
   },
 ];
 
@@ -65,7 +72,7 @@ function MemoriesGallery() {
         {memories.map((memory) => (
           <article className="memory-card" key={memory.id}>
             <div className="memory-image">
-              {memory.image && !failedImages[memory.id] ? (
+              {!failedImages[memory.id] ? (
                 <img
                   src={memory.image}
                   alt={memory.title}
@@ -160,6 +167,17 @@ function MemoriesGallery() {
           <div className="revealed-message">
             <span aria-hidden="true">🤣💗🎉</span>
 
+            <h4>Surprise, Brianna! 😂💗</h4>
+
+            <img
+              src="/assets/images/funny-picture.jpg"
+              alt="Brianna's funny birthday surprise"
+              className="surprise-picture"
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+              }}
+            />
+
             <p>
               Birthday rule number one: you're officially allowed to be
               extra today. Eat the cake, enjoy the attention, and keep
@@ -175,3 +193,4 @@ function MemoriesGallery() {
 }
 
 export default MemoriesGallery;
+
