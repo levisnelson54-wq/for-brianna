@@ -1,0 +1,361 @@
+.love-letter-section {
+  position: relative;
+  isolation: isolate;
+  width: min(920px, calc(100% - 32px));
+  margin: 80px auto;
+  padding: 58px 24px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff1f7;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(229, 130, 190, 0.16), transparent 58%),
+    linear-gradient(155deg, rgba(43, 19, 57, 0.94), rgba(25, 12, 39, 0.97));
+  border: 1px solid rgba(255, 190, 225, 0.25);
+  border-radius: 30px;
+  box-shadow: 0 20px 70px rgba(15, 5, 25, 0.25);
+}
+
+.love-letter-section::before,
+.love-letter-section::after {
+  position: absolute;
+  z-index: -1;
+  width: 180px;
+  height: 180px;
+  content: "";
+  border-radius: 50%;
+  background: rgba(239, 153, 204, 0.08);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.love-letter-section::before {
+  top: 10%;
+  left: -90px;
+}
+
+.love-letter-section::after {
+  right: -90px;
+  bottom: 8%;
+}
+
+.love-letter-stars {
+  margin-bottom: 24px;
+  color: #ffd4e8;
+  font-size: 23px;
+  letter-spacing: 8px;
+  animation: letterTwinkle 3s ease-in-out infinite alternate;
+}
+
+.love-letter-eyebrow {
+  margin-bottom: 16px;
+  color: #f2b7d8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.love-letter-heading {
+  margin: 0 auto 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 5vw, 49px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.love-letter-heading span {
+  display: block;
+  margin-top: 8px;
+  color: #ffbadb;
+  font-style: italic;
+}
+
+.love-letter-intro {
+  margin: 0 auto 30px;
+  color: #e7d5e5;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.love-letter-envelope {
+  width: min(100%, 470px);
+  margin: 0 auto;
+  padding: 36px 24px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 198, 226, 0.2);
+  border-radius: 22px;
+  animation: letterAppear 0.7s ease both;
+}
+
+.envelope-heart {
+  margin-bottom: 12px;
+  font-size: 57px;
+  animation: heartFloat 2.6s ease-in-out infinite;
+}
+
+.love-letter-envelope p {
+  color: #f3dfed;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.love-letter-button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 23px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: linear-gradient(120deg, #f4a9cf, #d98fbd);
+  color: #38172f;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(229, 130, 190, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.love-letter-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(229, 130, 190, 0.3);
+}
+
+.love-letter-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.envelope-note {
+  display: block;
+  margin-top: 20px;
+  color: #cbb2cc;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.love-letter-paper {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid rgba(190, 112, 153, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff8fc, #fcecf5);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  color: #54334d;
+  text-align: left;
+  animation: letterAppear 0.85s ease both;
+}
+
+.letter-top-heart {
+  margin-bottom: 20px;
+  color: #d76b9d;
+  font-size: 34px;
+  text-align: center;
+}
+
+.letter-dear {
+  color: #9f4f7a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.love-letter-paper > p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.letter-highlight {
+  margin: 28px 0;
+  padding: 19px 20px;
+  border-left: 3px solid #d76b9d;
+  border-radius: 0 12px 12px 0;
+  background: rgba(215, 107, 157, 0.09);
+  color: #87436a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.love-letter-paper > .letter-emphasis {
+  margin: 28px 0;
+  color: #9f416f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.letter-signoff {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(159, 79, 122, 0.2);
+  text-align: right;
+}
+
+.letter-signoff p {
+  margin-bottom: 15px;
+  color: #a54d7c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.letter-signoff span,
+.letter-signoff strong {
+  display: block;
+  margin-top: 8px;
+}
+
+.letter-signoff span {
+  color: #806079;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.letter-signoff strong {
+  color: #a54d7c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+}
+
+.last-surprise-button {
+  display: block;
+  margin: 30px auto 0;
+}
+
+.last-love-surprise {
+  margin-top: 28px;
+  padding: 26px 22px;
+  border: 1px solid rgba(215, 107, 157, 0.25);
+  border-radius: 16px;
+  background: rgba(215, 107, 157, 0.08);
+  text-align: center;
+  animation: letterAppear 0.7s ease both;
+}
+
+.surprise-heart {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 36px;
+  animation: heartFloat 2.6s ease-in-out infinite;
+}
+
+.last-love-surprise p {
+  margin-bottom: 17px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.last-love-surprise strong {
+  display: block;
+  color: #a34a78;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.surprise-sparkles {
+  display: block;
+  margin-top: 18px;
+  color: #bd6895;
+  letter-spacing: 8px;
+}
+
+.love-letter-footer {
+  max-width: 510px;
+  margin: 32px auto 0;
+  color: #e9c8df;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+@keyframes letterAppear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes letterTwinkle {
+  from {
+    opacity: 0.65;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .love-letter-section {
+    width: calc(100% - 22px);
+    margin: 48px auto;
+    padding: 40px 14px;
+    border-radius: 23px;
+  }
+
+  .love-letter-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .love-letter-intro {
+    font-size: 14px;
+  }
+
+  .love-letter-envelope {
+    padding: 28px 16px;
+  }
+
+  .love-letter-paper {
+    padding: 24px 19px;
+  }
+
+  .love-letter-paper > p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .letter-highlight {
+    padding: 16px;
+    font-size: 17px;
+  }
+
+  .love-letter-paper > .letter-emphasis {
+    font-size: 20px;
+  }
+
+  .love-letter-button {
+    max-width: 100%;
+    padding: 13px 18px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .love-letter-section *,
+  .love-letter-section *::before,
+  .love-letter-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

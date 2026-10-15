@@ -1,3 +1,4 @@
+import LoveLetter from "./LoveLetter";
 import FinalSurprise from "./FinalSurprise";
 import { useState } from "react";
 import "./App.css";
@@ -161,7 +162,14 @@ animationDelay: `${(index % 8) * 0.4}s`,
   <BirthdayWishes />
 
   {/* Memories gallery */}
-  <MemoriesGallery />
+<MemoriesGallery />
+
+{/* A special personal letter for Brianna */}
+<LoveLetter />
+
+{/* Final birthday surprise */}
+<FinalSurprise />
+  
 
   {/* Final birthday surprise */}
 <FinalSurprise />
