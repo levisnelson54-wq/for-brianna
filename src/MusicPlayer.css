@@ -1,59 +1,69 @@
 .music-player {
 position: fixed;
-right: 20px;
-bottom: 20px;
+right: 18px;
+bottom: 18px;
 z-index: 1000;
 display: flex;
 align-items: center;
-gap: 12px;
-width: min(340px, calc(100vw - 32px));
-padding: 14px;
+gap: 9px;
+width: max-content;
+max-width: calc(100vw - 24px);
+padding: 9px 11px;
 color: white;
 background: rgba(39, 20, 65, 0.96);
-border: 1px solid rgba(255, 192, 220, 0.4);
-border-radius: 20px;
-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+border: 1px solid rgba(255, 192, 220, 0.5);
+border-radius: 50px;
+box-shadow: 0 5px 22px rgba(0, 0, 0, 0.25);
 backdrop-filter: blur(12px);
-animation: music-player-appear 0.8s ease both;
+touch-action: none;
+user-select: none;
+cursor: grab;
+animation: music-player-appear 0.5s ease both;
+}
+
+.music-player.is-dragging {
+cursor: grabbing;
+box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.music-player audio {
+display: none;
 }
 
 .music-disc {
 display: grid;
 flex-shrink: 0;
-width: 48px;
-height: 48px;
+width: 35px;
+height: 35px;
 place-items: center;
 color: white;
-font-size: 25px;
+font-size: 20px;
 background: linear-gradient(135deg, #ff8fbd, #a66bff);
-border: 4px solid rgba(255, 255, 255, 0.3);
+border: 2px solid rgba(255, 255, 255, 0.35);
 border-radius: 50%;
-box-shadow: 0 0 18px rgba(255, 143, 189, 0.25);
-animation: spin-record 8s linear infinite;
+box-shadow: 0 0 12px rgba(255, 143, 189, 0.2);
+}
+
+.music-player:has(.music-toggle[aria-label="Pause birthday music"]) .music-disc {
+animation: spin-record 5s linear infinite;
 }
 
 .music-details {
-flex: 1;
 min-width: 0;
 }
 
 .music-title {
-margin: 0 0 4px;
-font-size: 13px;
+margin: 0 0 3px;
+font-size: 11px;
 font-weight: 700;
+white-space: nowrap;
 }
 
 .music-status {
-margin: 0 0 10px;
+margin: 0;
 color: #e9d7ff;
-font-size: 11px;
-line-height: 1.5;
-}
-
-.music-controls {
-display: flex;
-align-items: center;
-gap: 10px;
+font-size: 10px;
+white-space: nowrap;
 }
 
 .music-toggle {
@@ -63,22 +73,18 @@ width: 34px;
 height: 34px;
 place-items: center;
 color: #48245f;
-font-size: 15px;
+font-size: 13px;
 font-weight: bold;
 background: #ffd3e5;
 border: none;
 border-radius: 50%;
 cursor: pointer;
-transition:
-transform 0.2s ease,
-background 0.2s ease,
-box-shadow 0.2s ease;
+transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .music-toggle:hover {
-transform: scale(1.1);
+transform: scale(1.08);
 background: #ffb6d4;
-box-shadow: 0 0 15px rgba(255, 182, 212, 0.45);
 }
 
 .music-toggle:focus-visible {
@@ -86,25 +92,14 @@ outline: 2px solid white;
 outline-offset: 3px;
 }
 
-.music-caption {
-color: #ffe6f1;
-font-size: 10px;
-line-height: 1.4;
-}
-
-.music-open-message {
-margin: 9px 0 0;
+.music-drag-hint {
 color: #ffc9e0;
-font-size: 11px;
-line-height: 1.5;
-animation: music-message-appear 0.35s ease both;
+font-size: 17px;
+line-height: 1;
+cursor: grab;
 }
 
 @keyframes spin-record {
-from {
-transform: rotate(0deg);
-}
-
 to {
 transform: rotate(360deg);
 }
@@ -113,19 +108,7 @@ transform: rotate(360deg);
 @keyframes music-player-appear {
 from {
 opacity: 0;
-transform: translateY(15px);
-}
-
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-@keyframes music-message-appear {
-from {
-opacity: 0;
-transform: translateY(5px);
+transform: translateY(10px);
 }
 
 to {
@@ -136,17 +119,26 @@ transform: translateY(0);
 
 @media (max-width: 480px) {
 .music-player {
-right: 12px;
-bottom: 12px;
-width: min(340px, calc(100vw - 24px));
-padding: 12px;
+gap: 7px;
+padding: 8px 10px;
+max-width: calc(100vw - 20px);
+}
+
+.music-disc {
+width: 32px;
+height: 32px;
+font-size: 18px;
+}
+
+.music-toggle {
+width: 32px;
+height: 32px;
 }
 }
 
 @media (prefers-reduced-motion: reduce) {
 .music-player,
-.music-disc,
-.music-open-message {
+.music-disc {
 animation: none;
 }
 

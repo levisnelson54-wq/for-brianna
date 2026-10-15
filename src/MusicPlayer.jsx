@@ -1,51 +1,54 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./MusicPlayer.css";
 
 function MusicPlayer() {
-const [showMusicMessage, setShowMusicMessage] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
-const songUrl = "https://www.youtube.com/results?search_query=Bruno+Mars+Risk+It+All+official";
+  const toggleMusic = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-const openSong = () => {
-window.open(songUrl, "_blank", "noopener,noreferrer");
-setShowMusicMessage(true);
-};
+    try {
+      if (audio.paused) {
+        await audio.play();
+      } else {
+        audio.pause();
+      }
+    } catch (error) {
+      console.error("Audio playback failed:", error);
+      alert("The song could not play. Please check the MP3 file.");
+    }
+  };
 
-return ( <aside className="music-player"> <div className="music-disc">
-♫ </div>
+  return (
+    <aside className="music-player">
+      <audio
+        ref={audioRef}
+        src="/assets/music/birthday-song.mp3"
+        loop
+        preload="auto"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
 
-```
-  <div className="music-details">
-    <p className="music-title">Your Birthday Song 🎵</p>
+      <div className="music-disc">♫</div>
 
-    <p className="music-status">
-      Risk It All — Bruno Mars ❤️
-    </p>
+      <div className="music-details">
+        <p className="music-title">For Brianna 💗</p>
+        <p className="music-status">Your reggae soundtrack 🇯🇲</p>
+      </div>
 
-    <div className="music-controls">
       <button
         type="button"
         className="music-toggle"
-        onClick={openSong}
-        aria-label="Listen to Risk It All by Bruno Mars"
+        onClick={toggleMusic}
+        aria-label={isPlaying ? "Pause music" : "Play music"}
       >
-        ▶
+        {isPlaying ? "Ⅱ" : "▶"}
       </button>
-
-      <span className="music-caption">
-        A little song for Brianna 💗
-      </span>
-    </div>
-
-    {showMusicMessage && (
-      <p className="music-open-message">
-        Enjoy your song, Brianna! ❤️🎶
-      </p>
-    )}
-  </div>
-</aside>
-
-);
+    </aside>
+  );
 }
 
 export default MusicPlayer;
